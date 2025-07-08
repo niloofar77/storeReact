@@ -1,10 +1,16 @@
-import {} from '@src/pages';
+
+import LandingPage from '@src/pages/landing';
 
 
 export const routes = [
     {
         route: "/",
-        element: <LoginPage/>,
+        element: <LandingPage/>,
+        allowedRoute:['*']
+    },
+    {
+        route: "/landing",
+        element: <LandingPage/>,
         allowedRoute:['*']
     },
 
@@ -15,7 +21,7 @@ export const routes = [
     
 
 const allwaysShowRoutes = [];
-const beforeAuthRoutes = ['/login'];
+const beforeAuthRoutes = ['/'];
 
 export const filterRoutesByAuthStep = (isAuth, roles) => {
     return routes.filter((item) => {

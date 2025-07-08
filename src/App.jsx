@@ -1,12 +1,12 @@
 
 import { Navigate, Route, Routes} from "react-router-dom";
-
 import PrivateLayout from "@src/layout/private";
 import PublicLayout from "@src/layout/public";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
 import { prefixer } from "stylis";
 import rtlPlugin from "stylis-plugin-rtl";
+import { filterRoutesByAuthStep, routes } from "./config/routes";
 
 
 
@@ -19,8 +19,9 @@ export default function App() {
 
 
 
+  let roles = []
   const isAuth=true
-
+  console.log(routes)
 return (
     <CacheProvider value={cacheRtl}>
     
