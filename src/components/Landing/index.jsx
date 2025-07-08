@@ -1,7 +1,13 @@
+import { Box, Button } from '@mui/material';
 
 export default function Landing() {
 
     return(<>
-    landing
+        
+       
+       <Box >
+        landing
+        
+       </Box>
     </>)
 }
