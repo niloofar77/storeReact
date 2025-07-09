@@ -2,12 +2,14 @@ import { Box, Button, Typography } from "@mui/material";
 import HeroSection from "../global/heroSection";
 import ProductSection from "../productsSection";
 import CustomTabs from "../global/customTabs";
+import Features from "../features";
 
 export default function Landing() {
   return (
     <>
       <Box sx={{ display: "flex", flexDirection: "column",gap:2 }}>
         <HeroSection></HeroSection>
+        <Features></Features>
         <Typography variant="h6" sx={{m:2}}>Great Deals on What You Love</Typography>
         <Typography variant="h6" sx={{color:"gray",m:1}}>
           Items similar to what you've browsed are on sale
@@ -20,8 +22,8 @@ export default function Landing() {
         </Typography>
         <Button href="#text-buttons">shopAll</Button>
         </Box>
-   
         <ProductSection></ProductSection>
+       
 
 
       </Box>

@@ -55,7 +55,7 @@ export default function PublicLayout() {
       <Header />
       <Box
         sx={{
-          maxWidth: "1420px",
+          width: "1430px",
           flexGrow: 1,
           display: "flex",
           justifyContent: "center",
