@@ -9,7 +9,7 @@ import {ToastContainer, Zoom} from "react-toastify";
 import {BrowserRouter} from "react-router-dom";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import axios from "axios";
+
 import App from './App'
 
 
