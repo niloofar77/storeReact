@@ -8,12 +8,12 @@ import { LuSquareArrowRight, LuSquareArrowLeft } from "react-icons/lu";
 
 export default function ProductSection() {
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 3 // Adjust based on your design
+  const itemsPerPage = 3 
 
-  // Calculate total pages
-  const totalPages = Math.ceil(mockData.length / itemsPerPage);
 
-  // Handle pagination
+    const totalPages = Math.ceil(mockData.length / itemsPerPage);
+
+
   const handleNextPage = () => {
     setCurrentPage((prev) => (prev + 1) % totalPages);
   };
@@ -22,7 +22,7 @@ export default function ProductSection() {
     setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
   };
 
-  // Get current page items
+  
   const getCurrentPageItems = () => {
     const startIndex = currentPage * itemsPerPage;
     return mockData.slice(startIndex, startIndex + itemsPerPage);
@@ -44,7 +44,7 @@ export default function ProductSection() {
       >
 
 
-        <IconButton onClick={handlePrevPage} disabled={totalPages <= 1}>
+        <IconButton onClick={handlePrevPage} disabled={totalPages <= 1}  sx={{m:2}}> 
           <LuSquareArrowLeft />
         </IconButton>
 
@@ -62,11 +62,12 @@ export default function ProductSection() {
               name={item.name} 
               price={item.price} 
               imageUrl={item.imageUrl} 
+              rating={item.rating}
             />
           ))}
         </Box>
 
-        <IconButton onClick={handleNextPage} disabled={totalPages <= 1}>
+        <IconButton onClick={handleNextPage} disabled={totalPages <= 1} sx={{m:2}} >
           <LuSquareArrowRight />
         </IconButton>
       </Box>

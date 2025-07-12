@@ -63,7 +63,7 @@ export default function PublicLayout() {
           margin: "0 auto", // Center the inner box
         }}
       >
-        <main style={{ flexGrow: 1 }}> {/* Make sure main takes full height */}
+        <main style={{ flexGrow: 1 }}> 
           <Outlet />
         </main>
       </Box>

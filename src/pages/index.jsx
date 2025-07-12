@@ -1,2 +1,3 @@
 import LandingPage from "@src/pages/landing";
-export { LandingPage};
+import CartPage from "@src/pages/cart";
+export { LandingPage,CartPage};

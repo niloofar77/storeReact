@@ -5,14 +5,22 @@ import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import logo from '@images/react.svg';
 import { CustomAppBar } from './StyledComponent';
 import SearchBar from '../searchBar';
+import { useCart } from '../../../contexts/CartContext';
+import { useNavigate } from 'react-router';
 
 export default function Header() {
   const [query, setQuery] = useState('');
+  const{cartItems}=useCart();
+  const navigate=useNavigate()
 
   const handleSearch = (e) => {
     setQuery(e.target.value);
     // handle search/filter here
   };
+  const handleNavigate=()=>{
+    navigate("/cart")
+
+  }
 
   return (
     <Box sx={{ flexGrow: 1, width: '100%' }}>
@@ -27,8 +35,9 @@ export default function Header() {
           </Box>
 
           <Box>
-            <IconButton color="inherit" aria-label="cart">
+            <IconButton color="inherit" aria-label="cart" onClick={handleNavigate}>
               <LocalGroceryStoreIcon />
+            {cartItems.length}
             </IconButton>
             <Button variant='outlined' sx={{ color: "black" }}>
               Login
