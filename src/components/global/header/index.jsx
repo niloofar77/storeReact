@@ -15,7 +15,7 @@ export default function Header() {
 
   const handleSearch = (e) => {
     setQuery(e.target.value);
-    // handle search/filter here
+   
   };
   const handleNavigate=()=>{
     navigate("/cart")
@@ -46,7 +46,7 @@ export default function Header() {
         </Toolbar>
       </CustomAppBar>
 
-      <Divider sx={{ my: 1 }} /> {/* Add Divider with margin on y-axis */}
+      <Divider sx={{ my: 1 }} />
 
       <Box sx={{ display: "flex", flexDirection: "row", gap: 6, justifyContent: "center", py: 1 }}>
         {['Woman', 'Man', 'Shoes',"Sale","New","Kids"].map((item) => (
@@ -59,7 +59,7 @@ export default function Header() {
       
               transition: 'color 0.3s ease',
               '&:hover': {
-                color: 'primary.main', // Use a primary color on hover
+                color: 'primary.main', 
                 transform: 'scale(1.05)'
               }
             }}
