@@ -13,10 +13,10 @@ import { CartProvider } from "./contexts/CartContext";
 
 
 export default function App() {
-  const cacheRtl = createCache({
-    key: "muirtl",
-    stylisPlugins: [prefixer, rtlPlugin],
-  });
+  // const cacheRtl = createCache({
+  //   key: "muirtl",
+  //   stylisPlugins: [prefixer, rtlPlugin],
+  // });
 
 
 
@@ -25,8 +25,7 @@ export default function App() {
   console.log(routes)
 return (
  
- 
-    <CacheProvider value={cacheRtl}>
+
       <CartProvider>
    
       <Routes>
@@ -45,7 +44,7 @@ return (
         </Route>
       </Routes>
       </CartProvider>
-    </CacheProvider>
+  
  
  
   );

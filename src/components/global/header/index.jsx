@@ -21,6 +21,9 @@ export default function Header() {
     navigate("/cart")
 
   }
+  const handleLogin=()=>{
+    navigate("/login")
+  }
 
   return (
     <Box sx={{ flexGrow: 1, width: '100%' }}>
@@ -39,7 +42,7 @@ export default function Header() {
               <LocalGroceryStoreIcon />
             {cartItems.length}
             </IconButton>
-            <Button variant='outlined' sx={{ color: "black" }}>
+            <Button onClick={handleLogin} variant='outlined' >
               Login
             </Button>
           </Box>

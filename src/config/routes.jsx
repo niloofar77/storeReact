@@ -1,6 +1,6 @@
 
 import LandingPage from '@src/pages/landing';
-import { CartPage } from '../pages';
+import { CartPage,SignUpPage,LoginPage } from '../pages';
 
 
 export const routes = [
@@ -18,7 +18,20 @@ export const routes = [
         route: "/cart",
         element: <CartPage/>,
         allowedRoute:['*']
-    }
+    },
+    {
+        route: "/signUp",
+        element: <SignUpPage/>,
+        allowedRoute:['*']
+    },
+    {
+        route: "/login",
+        element: <LoginPage/>,
+        allowedRoute:['*']
+    },
+    
+
+
 
     
      
