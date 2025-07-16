@@ -8,7 +8,8 @@ export let mockData=[
          price:"100$",
          imageUrl:p1,
          rating:3,
-         detail:"this is mock"
+         detail:"this is mock",
+         color:"red"
     },
     {
         id:2,
@@ -16,7 +17,8 @@ export let mockData=[
         price:"100$",
         imageUrl:p2,
         rating:4,
-        detail:"this is mock"
+        detail:"this is mock",
+        color:"blue"
     },
 
    {
@@ -25,7 +27,9 @@ export let mockData=[
     price:"100$",
     imageUrl:p3,
     rating:5,
-    detail:"this is mock"
+    detail:"this is mock",
+    color:"blue"
+
     },
     {
         id:4,
@@ -33,7 +37,9 @@ export let mockData=[
         price:"100$",
         imageUrl:p3,
         rating:0,
-        detail:"this is mock"
+        detail:"this is mock",
+        color:"blue"
+
         },
         {
             id:5,
@@ -41,7 +47,10 @@ export let mockData=[
             price:"100$",
             imageUrl:p3,
             rating:1,
-             detail:"this is mock"
+             detail:"this is mock",
+            color:"blue"
+
+
             },
             {
                 id:6,
@@ -49,7 +58,9 @@ export let mockData=[
                 price:"100$",
                 imageUrl:p3,
                 rating:1,
-                detail:"this is mock"
+                detail:"this is mock",
+                color:"blue"
+
                 },
     
             
