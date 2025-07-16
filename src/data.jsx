@@ -7,14 +7,16 @@ export let mockData=[
          name:"p1",
          price:"100$",
          imageUrl:p1,
-         rating:3
+         rating:3,
+         detail:"this is mock"
     },
     {
         id:2,
         name:"p2",
         price:"100$",
         imageUrl:p2,
-        rating:4
+        rating:4,
+        detail:"this is mock"
     },
 
    {
@@ -22,28 +24,32 @@ export let mockData=[
     name:"p3",
     price:"100$",
     imageUrl:p3,
-    rating:5
+    rating:5,
+    detail:"this is mock"
     },
     {
         id:4,
         name:"p3",
         price:"100$",
         imageUrl:p3,
-        rating:0
+        rating:0,
+        detail:"this is mock"
         },
         {
             id:5,
             name:"p3",
             price:"100$",
             imageUrl:p3,
-            rating:1
+            rating:1,
+             detail:"this is mock"
             },
             {
                 id:6,
                 name:"p6",
                 price:"100$",
                 imageUrl:p3,
-                rating:1
+                rating:1,
+                detail:"this is mock"
                 },
     
             

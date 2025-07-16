@@ -9,6 +9,7 @@ import { FaPlusCircle } from "react-icons/fa";
 import { Rating } from '@mui/material';
 import { useCart } from '../../../contexts/CartContext';
 import { useId } from 'react';
+import { Link } from 'react-router';
 
 
 
@@ -18,7 +19,9 @@ export default function ProductItem({ name, price, imageUrl, rating, id}) {
   const {addToCart}=useCart();
  
   const Product={ name, price, imageUrl, rating,id}
+  console.log(id)
   return (
+    <Link to={`/product/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
     <Card sx={{ width: "400px", m: 3 }}>
       <CardMedia
         sx={{ height: 140 }}
@@ -42,5 +45,6 @@ export default function ProductItem({ name, price, imageUrl, rating, id}) {
         </IconButton>
       </CardContent>
     </Card>
+    </Link>
   );
 }

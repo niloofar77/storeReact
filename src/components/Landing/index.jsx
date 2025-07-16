@@ -40,12 +40,11 @@ export default function Landing() {
           Categories
         </Typography>
         <Box
-      sx={{
+         sx={{
         display: "flex",
         flexWrap: "wrap",
         gap: 2,
-        m: 2,
-      }}
+        m: 2,}}
     >
       {categories.map((item, index) => (
         <Chip

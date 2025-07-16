@@ -63,6 +63,7 @@ export default function ProductSection() {
               price={item.price} 
               imageUrl={item.imageUrl} 
               rating={item.rating}
+              id={item.id}
             />
           ))}
         </Box>
