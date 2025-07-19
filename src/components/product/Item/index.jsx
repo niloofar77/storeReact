@@ -10,7 +10,7 @@ import { Rating } from '@mui/material';
 import { useCart } from '../../../contexts/CartContext';
 import { useId } from 'react';
 import { Link } from 'react-router';
-
+import { FaHeart } from "react-icons/fa";
 
 
 
@@ -43,6 +43,12 @@ export default function ProductItem({ name, price, imageUrl, rating, id}) {
         <IconButton sx={{color:"black"}} onClick={()=>addToCart(Product)}>
           <FaPlusCircle />
         </IconButton>
+        <IconButton sx={{color:"black"}} onClick={()=>addToLovedItems(Product)}>
+          <FaHeart />
+        </IconButton>
+
+      
+
       </CardContent>
     </Card>
     </Link>

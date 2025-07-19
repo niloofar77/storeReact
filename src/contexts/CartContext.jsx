@@ -6,9 +6,14 @@ export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
+  const[lovedItems,setLovedItems]=useState([])
 
   const addToCart = (product) => {
     setCartItems((prevItems) => [...prevItems, product]);
+    console.log("added")
+  };
+  const addToLovedItems = (product) => {
+    setLovedItems((prevItems) => [...prevItems, product]);
     console.log("added")
   };
 
@@ -23,7 +28,7 @@ export const CartProvider = ({ children }) => {
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart,addToLovedItems,lovedItems }}>
       {children}
     </CartContext.Provider>
   );

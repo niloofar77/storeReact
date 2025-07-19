@@ -1,4 +1,4 @@
-// import * as React from 'react';
+
 import { useState } from 'react';
 import { AppBar, Box, Toolbar, Typography, IconButton, Button, Divider } from '@mui/material';
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
@@ -8,9 +8,11 @@ import SearchBar from '../searchBar';
 import { useCart } from '../../../contexts/CartContext';
 import { useNavigate } from 'react-router';
 
+import { FaHeart } from "react-icons/fa";
+
 export default function Header() {
   const [query, setQuery] = useState('');
-  const{cartItems}=useCart();
+  const{cartItems,lovedItems,addToLovedItems}=useCart();
   const navigate=useNavigate()
 
   const handleSearch = (e) => {
@@ -24,13 +26,17 @@ export default function Header() {
   const handleLogin=()=>{
     navigate("/login")
   }
+  const handleHome=()=>{
+    navigate("/")
+  }
+
 
   return (
     <Box sx={{ flexGrow: 1, width: '100%' }}>
       <CustomAppBar position="static">
         <Toolbar variant="dense" sx={{ justifyContent: 'space-between' }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <img src={logo} alt="Logo" style={{ height: 32 }} />
+            <img src={logo} alt="Logo" style={{ height: 32 }}  onClick={handleHome}/>
           </Box>
 
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 3 }}>
@@ -45,6 +51,11 @@ export default function Header() {
             <Button onClick={handleLogin} variant='outlined' >
               Login
             </Button>
+            <IconButton color="inherit" aria-label="cart" onClick={handleNavigate}>
+              <FaHeart />
+            {lovedItems.length}
+            </IconButton>
+
           </Box>
         </Toolbar>
       </CustomAppBar>

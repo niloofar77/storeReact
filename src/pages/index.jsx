@@ -3,4 +3,5 @@ import CartPage from "@src/pages/cart";
 import SignUpPage from "@src/pages/signUp";
 import LoginPage from "@src/pages/login";
 import ProductDetailsPage from "@src/pages/productDetail";
-export { LandingPage,CartPage,SignUpPage,LoginPage,ProductDetailsPage};
+import NotFoundPage from "@src/pages/NotFound";
+export { LandingPage,CartPage,SignUpPage,LoginPage,ProductDetailsPage,NotFoundPage};

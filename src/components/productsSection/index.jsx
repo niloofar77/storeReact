@@ -4,6 +4,7 @@ import { Box, IconButton } from "@mui/material";
 import { mockData } from "../../data";
 import ProductItem from "../product/Item";
 
+
 import { LuSquareArrowRight, LuSquareArrowLeft } from "react-icons/lu";
 
 export default function ProductSection() {
@@ -39,7 +40,10 @@ export default function ProductSection() {
           alignItems: "center", 
           justifyContent: "center", 
           gap: 2, 
-          width: "1420px"
+          width: "1420px",
+          overflowX:"hidden",
+          overflowY:"hidden"
+       
         }}
       >
 

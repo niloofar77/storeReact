@@ -17,6 +17,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import AddIcon from '@mui/icons-material/Add';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import SecurityIcon from '@mui/icons-material/Security';
+import { useCart } from "../../contexts/CartContext";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -24,6 +25,7 @@ export default function ProductDetails() {
   const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [selectedColor, setSelectedColor] = useState(product?.color || '');
+  const{cartItems,lovedItems,addToLovedItems}=useCart();
 
   const [quantity, setQuantity] = useState(1);
   const imageRef = useRef(null);
@@ -44,6 +46,9 @@ export default function ProductDetails() {
       setQuantity(prev => prev - 1);
     }
   };
+ const handleAdd=()=>{
+
+ }
 
   return (
     <Box 
@@ -224,6 +229,7 @@ export default function ProductDetails() {
               textTransform: 'none',
               fontWeight: 600
             }}
+            onClick={()=>addToCart(product)}
           >
             Add to Cart
           </Button>
@@ -236,6 +242,7 @@ export default function ProductDetails() {
               borderRadius: 2,
               textTransform: 'none'
             }}
+            onClick={()=>addToLovedItems(product)}
           >
             Add to Wishlist
           </Button>
