@@ -1,6 +1,9 @@
+import PersonalInfo from "./personalInfo";
 
 export default function Profile() {
-    return(<>
-    ppppppppp
+    return(
+    <>
+    <PersonalInfo></PersonalInfo>
+    
     </>)
 }

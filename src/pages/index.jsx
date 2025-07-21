@@ -4,4 +4,7 @@ import SignUpPage from "@src/pages/signUp";
 import LoginPage from "@src/pages/login";
 import ProductDetailsPage from "@src/pages/productDetail";
 import NotFoundPage from "@src/pages/NotFound";
-export { LandingPage,CartPage,SignUpPage,LoginPage,ProductDetailsPage,NotFoundPage};
+import CategoryPage from "@src/pages/category";
+import ProfilePage from "@src/pages/profile";
+
+export { LandingPage,CartPage,SignUpPage,LoginPage,ProductDetailsPage,NotFoundPage,CategoryPage,ProfilePage};

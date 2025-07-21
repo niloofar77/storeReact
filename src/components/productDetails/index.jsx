@@ -18,6 +18,7 @@ import AddIcon from '@mui/icons-material/Add';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import SecurityIcon from '@mui/icons-material/Security';
 import { useCart } from "../../contexts/CartContext";
+import NotFound from "../notFound";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -25,12 +26,16 @@ export default function ProductDetails() {
   const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [selectedColor, setSelectedColor] = useState(product?.color || '');
-  const{cartItems,lovedItems,addToLovedItems}=useCart();
+  const{cartItems,lovedItems,addToLovedItems,addToCart}=useCart();
 
   const [quantity, setQuantity] = useState(1);
   const imageRef = useRef(null);
 
-  if (!product) return <Typography variant="h5">Product not found</Typography>;
+  if (!product) return (
+    <>
+    <NotFound></NotFound>
+    </>
+  )
 
   const handleMouseMove = (e) => {
     const rect = imageRef.current.getBoundingClientRect();
@@ -46,9 +51,6 @@ export default function ProductDetails() {
       setQuantity(prev => prev - 1);
     }
   };
- const handleAdd=()=>{
-
- }
 
   return (
     <Box 
@@ -59,7 +61,9 @@ export default function ProductDetails() {
         gap: 4, 
         p: 4, 
         maxWidth: 1200, 
-        margin: "0 auto" 
+        margin: "0 auto",
+        mt:25,
+        mb:25
       }}
     >
       {/* Image Section with Zoom */}

@@ -7,12 +7,14 @@ import { CustomAppBar } from './StyledComponent';
 import SearchBar from '../searchBar';
 import { useCart } from '../../../contexts/CartContext';
 import { useNavigate } from 'react-router';
-
+import { FaUser } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
+import MenuCustom from '../Menu';
 
 export default function Header() {
   const [query, setQuery] = useState('');
   const{cartItems,lovedItems,addToLovedItems}=useCart();
+  const [showMenu, setShowMenu] = useState(false); 
   const navigate=useNavigate()
 
   const handleSearch = (e) => {
@@ -29,8 +31,9 @@ export default function Header() {
   const handleHome=()=>{
     navigate("/")
   }
-
-
+  const handleMenu=()=>{
+    return setShowMenu((prv)=>!prv)
+  }
   return (
     <Box sx={{ flexGrow: 1, width: '100%' }}>
       <CustomAppBar position="static">
@@ -43,25 +46,30 @@ export default function Header() {
             <SearchBar value={query} onChange={handleSearch} />
           </Box>
 
-          <Box>
+            <Box>
             <IconButton color="inherit" aria-label="cart" onClick={handleNavigate}>
               <LocalGroceryStoreIcon />
-            {cartItems.length}
-            </IconButton>
-            <Button onClick={handleLogin} variant='outlined' >
-              Login
-            </Button>
-            <IconButton color="inherit" aria-label="cart" onClick={handleNavigate}>
+              {cartItems.length}  </IconButton>
+              <IconButton color="inherit" aria-label="cart" onClick={handleMenu}>
+                  <FaUser />
+              </IconButton>
+              <IconButton color="inherit" aria-label="cart" onClick={handleNavigate}>
               <FaHeart />
-            {lovedItems.length}
+               {lovedItems.length}
             </IconButton>
 
-          </Box>
+
+            </Box>
+        <Box  sx={{position:"absolute",top:"50px",right:"10px"}}>
+          {showMenu&&<MenuCustom></MenuCustom>}
+        </Box>
+  
         </Toolbar>
       </CustomAppBar>
 
       <Divider sx={{ my: 1 }} />
 
+     
       <Box sx={{ display: "flex", flexDirection: "row", gap: 6, justifyContent: "center", py: 1 }}>
         {['Woman', 'Man', 'Shoes',"Sale","New","Kids"].map((item) => (
           <Typography

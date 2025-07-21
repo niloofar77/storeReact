@@ -22,7 +22,7 @@ export default function ProductItem({ name, price, imageUrl, rating, id}) {
   console.log(id)
   return (
     <Link to={`/product/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
-    <Card sx={{ width: "400px", m: 3 }}>
+    <Card sx={{ width: "400px", m: 3 }} variant='outlined'>
       <CardMedia
         sx={{ height: 140 }}
         image={imageUrl}
