@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import { FaPlusCircle } from "react-icons/fa";
 import { Rating } from '@mui/material';
 import { useCart } from '../../../contexts/CartContext';
-import { useId } from 'react';
 import { Link } from 'react-router';
 import { FaHeart } from "react-icons/fa";
 

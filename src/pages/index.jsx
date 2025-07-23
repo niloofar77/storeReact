@@ -6,5 +6,7 @@ import ProductDetailsPage from "@src/pages/productDetail";
 import NotFoundPage from "@src/pages/NotFound";
 import CategoryPage from "@src/pages/category";
 import ProfilePage from "@src/pages/profile";
+import CheckoutPage from "@src/pages/checkout";
 
-export { LandingPage,CartPage,SignUpPage,LoginPage,ProductDetailsPage,NotFoundPage,CategoryPage,ProfilePage};
+
+export { LandingPage,CartPage,SignUpPage,LoginPage,ProductDetailsPage,NotFoundPage,CategoryPage,ProfilePage,CheckoutPage};

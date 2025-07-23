@@ -2,16 +2,22 @@
 import React from 'react';
 import { useCart } from '../../contexts/CartContext';
 import { Box, Button, Card, CardContent, Typography, Grid } from '@mui/material';
+import { useNavigate } from 'react-router';
 
 export default function Cart() {
   const { cartItems, removeFromCart, clearCart } = useCart();
-
+  const navigate=useNavigate()
+  const handleNavigate=()=>{
+    
+    navigate("/checkout")
+  }
   return (
     <Card variant="outlined" sx={{ padding: 2, margin: 2 }}>
       <CardContent>
         <Typography variant="h5" gutterBottom>
           Cart
         </Typography>
+          <Button variant='contained' color='success' sx={{mt:13,mb:14,alignSelf:"right",display:"flex"}} onClick={handleNavigate}>Confirm</Button>
 
         {cartItems.length === 0 ? (
           <Typography variant="body1" color="text.secondary">

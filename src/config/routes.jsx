@@ -1,6 +1,6 @@
 
 import LandingPage from '@src/pages/landing';
-import { CartPage,SignUpPage,LoginPage, ProductDetailsPage,NotFoundPage,CategoryPage,ProfilePage } from '../pages';
+import { CartPage,SignUpPage,LoginPage, ProductDetailsPage,NotFoundPage,CategoryPage,ProfilePage, CheckoutPage } from '../pages';
 
 
 export const routes = [
@@ -46,6 +46,13 @@ export const routes = [
         element: <ProfilePage/>,
         allowedRoute:['*']
     },
+    {
+        route: "/checkout",
+        element: <CheckoutPage/>,
+        allowedRoute:['*']
+    },
+    
+
 ];
     
 
