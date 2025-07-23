@@ -8,10 +8,28 @@ export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const[lovedItems,setLovedItems]=useState([])
 
-  const addToCart = (product) => {
-    setCartItems((prevItems) => [...prevItems, product]);
-    console.log("added")
+  // const addToCart = (product) => {
+  //   setCartItems((prevItems) => [...prevItems, product]);
+  //   console.log("added")
+  // };
+
+  const addToCart = (product, quantity) => {
+    setCartItems((prevItems) => {
+      const existingItem = prevItems.find((item) => item.id === product.id);
+      if (existingItem) {
+
+        return prevItems.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + quantity }
+            : item
+        );
+      } else {
+        
+        return [...prevItems, { ...product, quantity }];
+      }
+    });
   };
+  
   const addToLovedItems = (product) => {
     setLovedItems((prevItems) => [...prevItems, product]);
     console.log("added")

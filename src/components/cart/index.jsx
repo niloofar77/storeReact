@@ -32,7 +32,8 @@ export default function Cart() {
                   }}
                 >
                   <img src={item.imageUrl} width="64px"></img>
-                  <Typography variant="body1">
+                  
+                  <Typography variant="body1" >
                     {item.name}
                   </Typography>
                   <Typography variant="body1">
@@ -43,6 +44,12 @@ export default function Cart() {
                     {item.id} $
                     
                   </Typography>
+                  <Typography variant="body1">
+                    {item.quantity} 
+                    
+                  </Typography>
+                  
+
                   <img src={item.imgUrl}></img>
                   <Button
                     variant="contained"

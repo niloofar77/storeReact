@@ -25,13 +25,11 @@ export default function MenuCustom() {
   
         </MenuItem>
         <MenuItem sx={{display:"flex",flexDirection:"row-reverse",justifyContent:"flex-end",gap:2}}>
-         
-
            <Typography  sx={{ color: "text.secondary",fontWeight:"bold",fontSize:"20px" }}>
-            Personal Info
+              Personal Info
             </Typography>
             <ListItemIcon>
-            <IoDocument></IoDocument>
+                <IoDocument></IoDocument>
              </ListItemIcon>
 
         </MenuItem>
@@ -41,7 +39,7 @@ export default function MenuCustom() {
              Logout 
           </Typography>
             <ListItemIcon>
-            <IoLogOut></IoLogOut>
+                <IoLogOut></IoLogOut>
             </ListItemIcon>
  
 

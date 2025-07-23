@@ -35,25 +35,17 @@ export const routes = [
         allowedRoute:['*']
     },
     {
-        route: "/category",
+        route: "/category/:type",
         element: <CategoryPage/>,
         allowedRoute:['*']
     },
+
+
     {
         route: "/profile",
         element: <ProfilePage/>,
         allowedRoute:['*']
     },
-
-
-
-
-
-
-
-    
-     
-
 ];
     
 

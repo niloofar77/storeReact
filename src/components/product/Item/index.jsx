@@ -14,11 +14,11 @@ import { FaHeart } from "react-icons/fa";
 
 
 
-export default function ProductItem({ name, price, imageUrl, rating, id}) {
+export default function ProductItem({ name, price, imageUrl, rating, id,quantity}) {
   
   const {addToCart}=useCart();
  
-  const Product={ name, price, imageUrl, rating,id}
+  const Product={ name, price, imageUrl, rating,id,quantity}
   console.log(id)
   return (
     <Link to={`/product/${id}`} style={{ textDecoration: 'none', color: 'inherit' }}>

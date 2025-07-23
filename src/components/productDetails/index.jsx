@@ -19,6 +19,9 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import SecurityIcon from '@mui/icons-material/Security';
 import { useCart } from "../../contexts/CartContext";
 import NotFound from "../notFound";
+import { commentsMock } from "../../commentsData";
+import UserComment from "../userComments";
+
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -27,8 +30,9 @@ export default function ProductDetails() {
   const [isHovering, setIsHovering] = useState(false);
   const [selectedColor, setSelectedColor] = useState(product?.color || '');
   const{cartItems,lovedItems,addToLovedItems,addToCart}=useCart();
+  const[quantity,setQuantity]=useState(1)
 
-  const [quantity, setQuantity] = useState(1);
+
   const imageRef = useRef(null);
 
   if (!product) return (
@@ -53,6 +57,7 @@ export default function ProductDetails() {
   };
 
   return (
+    <>
     <Box 
       sx={{ 
         display: "flex", 
@@ -63,7 +68,7 @@ export default function ProductDetails() {
         maxWidth: 1200, 
         margin: "0 auto",
         mt:25,
-        mb:25
+        mb:15
       }}
     >
       {/* Image Section with Zoom */}
@@ -82,8 +87,10 @@ export default function ProductDetails() {
             justifyContent: "center",
             overflow: "hidden",
             borderRadius: 3,
-            boxShadow: 3
+            mr:20
+           
           }}
+          variant="outlined"
         >
           <CardMedia
             component="img"
@@ -95,6 +102,7 @@ export default function ProductDetails() {
               height: "100%",
               objectFit: "contain",
               pointerEvents: "none",
+              
             }}
           />
         </Card>
@@ -104,7 +112,7 @@ export default function ProductDetails() {
           <Box
             sx={{
               position: "absolute",
-              left: "110%",
+              right: "110%",
               top: 0,
               width: 250,
               height: 250,
@@ -233,7 +241,7 @@ export default function ProductDetails() {
               textTransform: 'none',
               fontWeight: 600
             }}
-            onClick={()=>addToCart(product)}
+            onClick={()=>addToCart(product,quantity)}
           >
             Add to Cart
           </Button>
@@ -269,6 +277,15 @@ export default function ProductDetails() {
           />
         </Box>
       </Box>
+     
     </Box>
+     <Typography variant="h4">Comments</Typography>
+     {
+      commentsMock.map((item)=>{
+        return  <UserComment name={item.name} date={item.date} detail={item.detail} rating={item.rating}></UserComment>
+
+      })
+     }
+     </>
   );
 }

@@ -6,7 +6,7 @@ import logo from '@images/react.svg';
 import { CustomAppBar } from './StyledComponent';
 import SearchBar from '../searchBar';
 import { useCart } from '../../../contexts/CartContext';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaUser } from "react-icons/fa";
 import { FaHeart } from "react-icons/fa";
 import MenuCustom from '../Menu';
@@ -33,6 +33,23 @@ export default function Header() {
   }
   const handleMenu=()=>{
     return setShowMenu((prv)=>!prv)
+  }
+  const handleCategories=(item)=>{
+    console.log("item",item)
+
+    switch (item) {
+      case "Woman":
+         return navigate("/category/woman")
+      case "Man":
+        return  navigate("/category/man")
+      case "Kids":
+        return navigate("/category/kids")
+      default:
+        break
+    }
+    
+ 
+
   }
   return (
     <Box sx={{ flexGrow: 1, width: '100%' }}>
@@ -68,17 +85,15 @@ export default function Header() {
       </CustomAppBar>
 
       <Divider sx={{ my: 1 }} />
-
-     
       <Box sx={{ display: "flex", flexDirection: "row", gap: 6, justifyContent: "center", py: 1 }}>
-        {['Woman', 'Man', 'Shoes',"Sale","New","Kids"].map((item) => (
-          <Typography
+        {['Woman', 'Man', "Kids"].map((item) => (
+          <Link  key={item } to={`/category/${item.toLowerCase()}`} style={{textDecoration:"none"}}>
+            <Typography
             key={item}
             variant="h6"
             sx={{
               cursor: 'pointer',
               color: '#262626',
-      
               transition: 'color 0.3s ease',
               '&:hover': {
                 color: 'primary.main', 
@@ -88,6 +103,7 @@ export default function Header() {
           >
             {item}
           </Typography>
+          </Link>
         ))}
       </Box>
     </Box>

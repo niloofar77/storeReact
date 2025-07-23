@@ -8,6 +8,7 @@ import { prefixer } from "stylis";
 import rtlPlugin from "stylis-plugin-rtl";
 import { filterRoutesByAuthStep, routes } from "./config/routes";
 import { CartProvider } from "./contexts/CartContext";
+;
 
 
 
@@ -22,15 +23,11 @@ export default function App() {
 
   let roles = []
   const isAuth=false
-  console.log(routes)
+  // console.log(routes)
 return (
- 
-
       <CartProvider>
-   
-      <Routes>
-
-        <Route element={!!isAuth ? <PrivateLayout /> : <PublicLayout />}>
+        <Routes>
+          <Route element={!!isAuth ? <PrivateLayout /> : <PublicLayout />}>
           {routes.map((item) => {
             return (
               <Route

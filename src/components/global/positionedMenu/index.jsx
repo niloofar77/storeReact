@@ -1,49 +1,101 @@
 import * as React from 'react';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import Divider from "@mui/material/Divider";
+import Paper from "@mui/material/Paper";
+import MenuList from "@mui/material/MenuList";
+import MenuItem from "@mui/material/MenuItem";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Typography from "@mui/material/Typography";
+import { IoTrendingUp, IoPricetag, IoCash } from "react-icons/io5";
 
 export default function PositionedMenu() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+ return (
+ <Paper 
+   elevation={3} 
+   sx={{ 
+     width: 320, 
+     maxWidth: "100%", 
+     borderRadius: 2, 
+     boxShadow: '0 4px 6px rgba(0,0,0,0.1)', 
+     border:"1px solid #E0E0E0"
+   }}
+ >
+   <MenuList>
+     <MenuItem 
+       sx={{
+         display: "flex",
+         justifyContent: "space-between",
+         alignItems: "center",
+         '&:hover': {
+           backgroundColor: 'rgba(0,0,0,0.04)'
+         }
+       }}
+     >
+       <ListItemIcon>
+         <IoTrendingUp size={24} color="#1976d2" />
+       </ListItemIcon>
+       <Typography 
+         variant="body1" 
+         sx={{ 
+           color: "text.primary",
+           fontWeight: 600,
+           flexGrow: 1,
+           textAlign: 'left',
+        
 
-  return (
-    <>
-      <Button
-        id="demo-positioned-button"
-        aria-controls={open ? 'demo-positioned-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
-        Dashboard
-      </Button>
-      <Menu
-        id="demo-positioned-menu"
-        aria-labelledby="demo-positioned-button"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
-        }}
-      >
-        <MenuItem key={1} onClick={handleClose}>Profile</MenuItem>
-        <MenuItem key={2} onClick={handleClose}>My account</MenuItem>
-        <MenuItem key={3} onClick={handleClose}>Logout</MenuItem>
-      </Menu>
-    
-    </>
-  );
+         }}
+       >
+         Most Popular
+       </Typography>
+     </MenuItem>
+
+     <MenuItem 
+       sx={{
+         display: "flex",
+         justifyContent: "space-between",
+         alignItems: "center",
+         '&:hover': {
+           backgroundColor: 'rgba(0,0,0,0.04)'
+         }
+       }}
+     >
+       <ListItemIcon>
+         <IoPricetag size={24} color="#4caf50" />
+       </ListItemIcon>
+       <Typography 
+         variant="body1" 
+         sx={{ 
+           color: "text.primary",
+           fontWeight: 600,
+           flexGrow: 1,
+           textAlign: 'left',
+          
+
+         }}
+       >
+         Cheapest
+       </Typography>
+     </MenuItem>
+
+     <MenuItem 
+       sx={{
+         display: "flex",
+         justifyContent: "space-between",
+         alignItems: "center",
+         '&:hover': {
+           backgroundColor: 'rgba(0,0,0,0.04)'
+         }
+       }}
+     >
+       <ListItemIcon>
+        <IoCash size={24} color="#ff9800" />
+       </ListItemIcon>
+       <Typography  variant="body1" sx={{ color: "text.primary",fontWeight: 600,flexGrow: 1,textAlign: 'left'}}>
+          Priciest
+       </Typography>
+     </MenuItem>
+
+     <Divider light />
+   </MenuList>
+ </Paper>
+ );
 }
