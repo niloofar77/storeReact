@@ -1,43 +1,104 @@
-import { Box, Button, Divider, Grid, TextField, Typography } from "@mui/material";
+import {
+    Box,
+    Button,
+    Divider,
+    Grid,
+    TextField,
+    Typography,
+    Card,
+    CardContent,
+    Stack
+  } from "@mui/material";
+  
+  export default function CheckOut() {
+      const cardData=[{
+        Day:"Mon",
+        date:10
 
-export default function CheckOut() {
+    },{
+        Day:"Sat",
+        date:11
+    },{
+        Day:"Tue",
+        date:12
+    },{
+        Day:"Fri",
+        date:10
+    }
 
-    return(<>
-    <Grid container spacing={3} sx={{my:20}}>
-        <Grid size={8} sx={{border:"1px solid gray",p:3}}>
-            <Grid size={12}> 
-                <Typography variant="h4">Enter the address</Typography> 
-            </Grid>
-            <Grid size={12}> 
-                <TextField variant="outlined" fullWidth>address</TextField>
-            </Grid>
-            <Grid size={12} sx={{mt:2}}> 
-                <Divider></Divider>
+]
+    return (
+      <Box sx={{ my: 10, px: 4 }}>
+        <Grid container spacing={4}>
+          {/* Left Section */}
+          <Grid item size={8}>
+            <Box sx={{ border: "1px solid #ccc", borderRadius: 2, p: 3 }}>
+              <Typography variant="h5" gutterBottom>
+                Enter the Address
+              </Typography>
+              <TextField
+                
+                variant="outlined"
+                fullWidth
+                sx={{ mb: 3,mt:3 }}
+                placeholder="nnnnnnnnnnnnnn"
+                inputProps={{ readOnly: true }}
+              />
+              <Button variant="outlined">Add address</Button>
+  
+              <Divider sx={{ my: 2 }} />
+  
+
+              <Typography variant="h5" gutterBottom>
+                Select Date and time
+              </Typography>
+              <Stack direction="row" spacing={2}>
             
-            </Grid>
-            <Grid size={12}> 
-                <Typography variant="h4">Select time </Typography> 
-            </Grid>
-            <Grid size={12}> 
-                <TextField variant="outlined" fullWidth>time</TextField>
-            </Grid>
-            <Grid size={12}> 
-                <Button variant="contained" sx={{my:2}}> Save</Button>
-            </Grid>
+                {cardData.map((item, index) => (
+                  <Card
+                    key={index}
+                    variant="outlined"
+                    sx={{
+                      flex: 1,
+                      textAlign: "center",
+                      cursor: "pointer",
+                      '&:hover': {
+                        backgroundColor: "#f0f0f0"
+                      }
+                    }}
+                  >
+                    <CardContent>
+                      <Typography variant="body2">{item.Day}</Typography>
+                      <Typography variant="h6">{item.date}</Typography>
+                    </CardContent>
+                  </Card>
+                ))}
+              </Stack>
+  
+              <Button variant="contained" fullWidth sx={{ mt: 4 }}>
+                Save
+              </Button>
+            </Box>
+          </Grid>
+  
+          {/* Right Section */}
+          <Grid item size={4}>
+            <Box sx={{ border: "1px solid #ccc", borderRadius: 2, p: 3 }}>
+              <Typography variant="h6" gutterBottom>
+                Summary
+              </Typography>
+              <Divider sx={{ mb: 2 }} />
+  
+              <Typography variant="body1" sx={{ mb: 1 }}>
+                Total Items: <strong>5</strong>
+              </Typography>
+              <Typography variant="body1">
+                Total Price: <strong>$780</strong>
+              </Typography>
+            </Box>
+          </Grid>
         </Grid>
-        <Grid size={4} sx={{border:"1px solid gray"}}>
-            <Grid size={12}> 
-                <Typography variant="h4" fullWidth>Total price:780$</Typography>
-            </Grid>
-            
-
-        </Grid>
-
-           
-     </Grid>
-            
-
-
-
-    </>)
-}
+      </Box>
+    );
+  }
+  
